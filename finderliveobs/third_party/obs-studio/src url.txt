@@ -1,0 +1,1 @@
+git clone --recursive -b release/27.2 https://github.com/obsproject/obs-studio.git

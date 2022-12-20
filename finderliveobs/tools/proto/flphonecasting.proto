@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+// just cpp using LITE_RUNTIME
+option optimize_for = LITE_RUNTIME;
+
+package flremoting.protocol;
+
+message PhoneCastingMessage {
+  optional uint32 status = 1;
+  optional int32 method = 2;
+  optional string ip = 3;
+  optional uint32 port = 4;
+};

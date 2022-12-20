@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+// just cpp using LITE_RUNTIME
+option optimize_for = LITE_RUNTIME;
+
+package flremoting.protocol;
+
+message StartRemoteMessage {
+  optional string userpath = 1;
+  optional uint32 previewhwnd = 2;
+}

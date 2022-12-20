@@ -1,0 +1,267 @@
+syntax = "proto2";
+
+// just cpp using LITE_RUNTIME
+option optimize_for = LITE_RUNTIME;
+
+package flremoting.protocol;
+
+import "flcomm.proto";
+
+enum ObsPropertyType {
+	OBS_PROPERTY_INVALID       = 0;
+	OBS_PROPERTY_BOOL          = 1;
+	OBS_PROPERTY_INT           = 2;
+	OBS_PROPERTY_FLOAT         = 3;
+	OBS_PROPERTY_TEXT          = 4;
+	OBS_PROPERTY_PATH          = 5;
+	OBS_PROPERTY_LIST          = 6;
+	OBS_PROPERTY_COLOR         = 7;
+	OBS_PROPERTY_BUTTON        = 8;
+	OBS_PROPERTY_FONT          = 9;
+	OBS_PROPERTY_EDITABLE_LIST = 10;
+	OBS_PROPERTY_FRAME_RATE    = 11;
+	OBS_PROPERTY_GROUP         = 12;
+	OBS_PROPERTY_COLOR_ALPHA   = 13;
+}
+
+message ObsPropertyDoubleInfo {
+  optional string name = 1;
+  optional double value = 2;
+}
+
+message ObsPropertyInt64Info {
+  optional string name = 1;
+  optional int64 value = 2;
+}
+
+message ObsPropertyStringInfo {
+  optional string name = 1;
+  optional string value = 2;
+}
+
+message ObsPropertiesInfo {
+  optional string info_name = 1;
+  optional ObsPropertyType info_type = 2;
+  optional bool info_bool_value = 3;
+  optional int32 info_int_value = 4;
+  optional double info_double_value = 5;
+  optional string info_string_value = 6;
+  repeated ObsPropertyDoubleInfo info_double_values = 7;
+  repeated ObsPropertyInt64Info info_int64_values = 8;
+  repeated ObsPropertyStringInfo info_string_values = 9;
+}
+
+message ObsPropertiesData {
+  repeated ObsPropertiesInfo obs_properties_infos = 1;
+}
+
+message ObsTextSourceData {
+  optional string source_id = 1;
+  optional string source_name = 2;
+  optional string face = 3;
+  optional int32 flags = 4;
+  optional string style = 5;
+  optional int32 size = 6;
+  optional ObsPropertiesData obs_properties_data = 7;
+};
+
+message ObsImageSourceData {
+  optional string source_id = 1;
+  optional string source_name = 2;
+  optional ObsPropertiesData obs_properties_data = 3;
+};
+
+message ObsVideoSourceData {
+  optional string source_id = 1;
+  optional string source_name = 2;
+  optional ObsPropertiesData obs_properties_data = 3;
+};
+
+message ObsCaptureSourceWindowInfo {
+  optional string window = 1;
+  optional bool cursor = 2;
+  optional bool client_area = 3;
+  optional string office_file = 4;
+};
+
+message ObsCaptureSourceGameInfo {
+  optional string capture_mode = 1;
+  optional string window = 2;
+  optional bool anti_cheat_hook = 3;
+  optional bool capture_overlays = 4;
+  optional bool capture_cursor = 5;
+};
+
+message ObsCaptureSourceMonitorInfo {
+  optional int64 monitor = 1;
+  optional bool use_rect = 2;
+  optional int64 left = 3;
+  optional int64 right = 4;
+  optional int64 top = 5;
+  optional int64 bottom = 6;
+  optional bool capture_cursor = 7;
+};
+
+message ObsCaptureSourceData {
+  optional string source_id = 1;
+  optional string source_name = 2;
+  optional int64 method =  3;
+  optional bytes payload = 4;
+  optional int64 priority =  5;
+  optional bool use_wildcards = 6;
+  optional bool compatibility = 7;
+};
+
+message ObsPhoneCastingSourceData {
+  optional string source_id = 1;
+  optional string source_name = 2;
+  optional int64 method = 3;
+  optional bool hardware_decode = 4;
+  optional bool cpu_status = 5;
+  optional bool force_update = 6;
+  optional int64 audio_channel = 7;
+  optional int64 audio_sample_rate = 8;
+  optional int64 casting_frame = 9;
+};
+
+message ObsCameraSourceData {
+  optional string source_id = 1;
+  optional string source_name = 2;
+  optional uint32 source_hwnd = 3;
+  optional ObsPropertiesData obs_properties_data = 4;
+  optional bool save_source = 5;
+  optional bool change_id = 6;
+};
+
+message InputVolumeData {
+  optional int32 value = 1;
+};
+
+message OutputVolumeData {
+  optional int32 value = 1;
+};
+
+message ObsItemMessage {
+  optional bool item_visible = 1;
+  optional int64 item_id = 2;
+  optional string source_type = 3;
+  optional string source_name = 4;
+  optional uint32 source_width = 5;
+  optional uint32 source_height = 6;
+  optional bytes source_data = 7;
+  optional bool item_lock_status = 8;
+};
+
+//
+message ObsCursorMessage {
+  optional bool cursor_status = 1;
+};
+
+//
+enum ObsItemActionType {
+  OBS_ITEMACTION_REMOVE = 0;
+  OBS_ITEMACTION_UP = 1;
+  OBS_ITEMACTION_DOWN = 2;
+  OBS_ITEMACTION_TOP = 3;
+  OBS_ITEMACTION_BOTTOM = 4;
+  OBS_ITEMACTION_SHOW = 5;
+  OBS_ITEMACTION_HIDE = 6;
+  OBS_ITEMACTION_RESET = 7;
+  OBS_ITEMACTION_FULL = 8;  // 画面源等比例全屏
+  OBS_ITEMACTION_FULLNON = 9; // 画面源拉伸全屏
+  OBS_ITEMACTION_ROT = 10;  // 顺时针旋转 90
+  OBS_ITEMACTION_ANTI_ROT = 11; // 逆时针旋转 90
+  OBS_ITEMACTION_SELECT = 12;
+  OBS_ITEMACTION_HOR_FLIP = 13; // 水平翻转
+  OBS_ITEMACTION_VER_FLIP = 14; // 垂直翻转
+  OBS_ITEMACTION_RENAME = 15;
+  OBS_ITEMACTION_LOCK = 16;
+  OBS_ITEMACTION_UNLOCK = 17;
+  OBS_ITEMACTION_POSITION = 18;
+};
+
+message ObsItemEditMessage {
+  optional int64 item_id = 1;
+  optional ObsItemActionType action_type = 2;
+};
+
+message ObsItemEditMessageReq {
+  optional ObsItemEditMessage edit_msg = 1;
+  optional string edit_info = 2;
+};
+
+message ObsItemEditMessageResp {
+  optional BaseResponse base_msg = 1;
+  optional ObsItemEditMessage edit_msg = 2;
+};
+
+//
+enum ObsDeviceType {
+  OBS_DEVICE_INPUT_MIC = 0;
+  OBS_DEVICE_OUTPUT_SPEAKER = 1;
+};
+
+message ObsDeviceInfo {
+  optional string device_name = 1;
+  optional string device_data = 2;
+};
+
+message ObsDeviceMessage {
+  optional ObsDeviceType device_type = 1;
+  repeated ObsDeviceInfo device_infos = 2;
+  optional string id_value = 3;
+  optional double gain_value = 4;
+  optional int32 noise_value = 5;
+  optional bool is_activate = 6;
+  optional int32 monitoring_value = 7;
+};
+
+enum ObsDeviceActionType {
+  OBS_DEVICEACTION_INPUT_ID = 0;
+  OBS_DEVICEACTION_OUTPUT_ID = 1;
+  OBS_DEVICEACTION_INPUT_GAIN = 2;
+  OBS_DEVICEACTION_INPUT_NOISE = 3;
+  OBS_DEVICEACTION_OUTPUT_GAIN = 4;
+  OBS_DEVICEACTION_INPUT_MT = 5;
+};
+
+message ObsDeviceEditMessageRequest {
+  optional ObsDeviceActionType action_type = 1;
+  optional string used_str_value = 2;
+  optional double used_double_value = 3;
+  optional int32 used_int_value = 4;
+};
+
+message ObsSourceFrame2Message {
+  optional int64 frame_id = 1;
+  optional uint32 frame_format = 2;
+  optional uint32 frame_width = 3;
+  optional uint32 frame_height = 4;
+  optional string frame_data = 5;
+};
+
+message ObsSceneItemInfoData {
+  optional string name = 1;
+  optional float posx = 2;
+  optional float posy = 3;
+  optional float width = 4;
+  optional float height = 5;
+  optional bool visible = 6;
+  optional int64 itemid = 7;
+};
+
+message ObsSceneItemInfoMessage {
+  repeated ObsSceneItemInfoData infos = 1;
+  optional double fps = 2;
+  optional int32 peak_volume = 3;
+};
+
+message ObsFPSInfoMessage {
+  optional uint32 fpsnum = 1;
+  optional uint32 fpsden = 2;
+};
+
+message ObsMeanRateInfoMessage {
+  optional bool enable = 1;
+  optional int32 fpsnum = 2;
+};

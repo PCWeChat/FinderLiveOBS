@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "finderliveobs", "finderliveobs\finderliveobs.vcxproj", "{A21788CF-30E4-4D36-B024-803685C0AF2E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "flproto", "finderliveobs\flproto\flproto.vcxproj", "{59733BD6-DD92-4D9F-915B-BF658931C604}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "base", "finderliveobs\third_party\chromium_base\src\sln\base\base.vcxproj", "{4FCD889E-E390-44B0-B4BD-37DB6F4AC9B6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "flipc", "finderliveobs\flipc\flipc.vcxproj", "{A86223AF-66F5-4F95-8715-CAFB032ED3AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A21788CF-30E4-4D36-B024-803685C0AF2E}.Debug|x64.ActiveCfg = Debug|x64
+		{A21788CF-30E4-4D36-B024-803685C0AF2E}.Debug|x64.Build.0 = Debug|x64
+		{A21788CF-30E4-4D36-B024-803685C0AF2E}.Debug|x86.ActiveCfg = Debug|x64
+		{A21788CF-30E4-4D36-B024-803685C0AF2E}.Debug|x86.Build.0 = Debug|x64
+		{A21788CF-30E4-4D36-B024-803685C0AF2E}.Release|x64.ActiveCfg = Release|x64
+		{A21788CF-30E4-4D36-B024-803685C0AF2E}.Release|x64.Build.0 = Release|x64
+		{A21788CF-30E4-4D36-B024-803685C0AF2E}.Release|x86.ActiveCfg = Release|x64
+		{A21788CF-30E4-4D36-B024-803685C0AF2E}.Release|x86.Build.0 = Release|x64
+		{59733BD6-DD92-4D9F-915B-BF658931C604}.Debug|x64.ActiveCfg = Debug|x64
+		{59733BD6-DD92-4D9F-915B-BF658931C604}.Debug|x64.Build.0 = Debug|x64
+		{59733BD6-DD92-4D9F-915B-BF658931C604}.Debug|x86.ActiveCfg = Debug|x64
+		{59733BD6-DD92-4D9F-915B-BF658931C604}.Debug|x86.Build.0 = Debug|x64
+		{59733BD6-DD92-4D9F-915B-BF658931C604}.Release|x64.ActiveCfg = Release|x64
+		{59733BD6-DD92-4D9F-915B-BF658931C604}.Release|x64.Build.0 = Release|x64
+		{59733BD6-DD92-4D9F-915B-BF658931C604}.Release|x86.ActiveCfg = Release|x64
+		{59733BD6-DD92-4D9F-915B-BF658931C604}.Release|x86.Build.0 = Release|x64
+		{4FCD889E-E390-44B0-B4BD-37DB6F4AC9B6}.Debug|x64.ActiveCfg = Debug|x64
+		{4FCD889E-E390-44B0-B4BD-37DB6F4AC9B6}.Debug|x64.Build.0 = Debug|x64
+		{4FCD889E-E390-44B0-B4BD-37DB6F4AC9B6}.Debug|x86.ActiveCfg = Debug|x64
+		{4FCD889E-E390-44B0-B4BD-37DB6F4AC9B6}.Debug|x86.Build.0 = Debug|x64
+		{4FCD889E-E390-44B0-B4BD-37DB6F4AC9B6}.Release|x64.ActiveCfg = Release|x64
+		{4FCD889E-E390-44B0-B4BD-37DB6F4AC9B6}.Release|x64.Build.0 = Release|x64
+		{4FCD889E-E390-44B0-B4BD-37DB6F4AC9B6}.Release|x86.ActiveCfg = Release|x64
+		{4FCD889E-E390-44B0-B4BD-37DB6F4AC9B6}.Release|x86.Build.0 = Release|x64
+		{A86223AF-66F5-4F95-8715-CAFB032ED3AD}.Debug|x64.ActiveCfg = Debug|x64
+		{A86223AF-66F5-4F95-8715-CAFB032ED3AD}.Debug|x64.Build.0 = Debug|x64
+		{A86223AF-66F5-4F95-8715-CAFB032ED3AD}.Debug|x86.ActiveCfg = Debug|Win32
+		{A86223AF-66F5-4F95-8715-CAFB032ED3AD}.Debug|x86.Build.0 = Debug|Win32
+		{A86223AF-66F5-4F95-8715-CAFB032ED3AD}.Release|x64.ActiveCfg = Release|x64
+		{A86223AF-66F5-4F95-8715-CAFB032ED3AD}.Release|x64.Build.0 = Release|x64
+		{A86223AF-66F5-4F95-8715-CAFB032ED3AD}.Release|x86.ActiveCfg = Release|Win32
+		{A86223AF-66F5-4F95-8715-CAFB032ED3AD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21387E23-2531-42F9-9A1E-21BC9947C9ED}
+	EndGlobalSection
+EndGlobal

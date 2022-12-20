@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+// just cpp using LITE_RUNTIME
+option optimize_for = LITE_RUNTIME;
+
+package flremoting.protocol;
+
+message BaseResponse {
+  optional int32 ret_code = 1;
+  optional string ret_msg = 2;
+}

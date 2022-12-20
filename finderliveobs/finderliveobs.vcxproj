@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a21788cf-30e4-4d36-b024-803685c0af2e}</ProjectGuid>
+    <RootNamespace>finderliveobs</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
+    <ProjectName>finderliveobs</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)out\bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)out\temp\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)out\bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)out\temp\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_AMD64_;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;FINDER_LIVE_MODULE_HEADER=;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)flipc;$(ProjectDir)third_party\protobuf\src;$(ProjectDir)third_party\chromium_base\src</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>advapi32.lib;ws2_32.lib;shell32.lib;version.lib;dbghelp.lib;winmm.lib;shlwapi.lib;ole32.lib;gdi32.lib;user32.lib;obs.lib;mmcrashpad_client.dll.lib;flmojo.dll.lib;libprotobuf-lited.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)out\lib\$(Configuration)\</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <UACUIAccess>false</UACUIAccess>
+    </Link>
+    <Manifest>
+      <AdditionalManifestFiles>$(ProjectDir)dpimanifest.xml %(AdditionalManifestFiles)</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_AMD64_;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;FINDER_LIVE_MODULE_HEADER=;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)flipc;$(ProjectDir)third_party\protobuf\src;$(ProjectDir)third_party\chromium_base\src</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>advapi32.lib;ws2_32.lib;shell32.lib;version.lib;dbghelp.lib;winmm.lib;shlwapi.lib;ole32.lib;gdi32.lib;user32.lib;obs.lib;mmcrashpad_client.dll.lib;flmojo.dll.lib;libprotobuf-lite.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)out\lib\$(Configuration)\</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <UACUIAccess>false</UACUIAccess>
+    </Link>
+    <Manifest>
+      <AdditionalManifestFiles>$(ProjectDir)dpimanifest.xml %(AdditionalManifestFiles)</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="flbase\flbase_config.cc" />
+    <ClCompile Include="flmojo\flmojo_service.cc" />
+    <ClCompile Include="flmojo\flmojo_recv.cc" />
+    <ClCompile Include="flmojo\flmojo_send.cc" />
+    <ClCompile Include="flobs\flobs_camera_beautify.cc" />
+    <ClCompile Include="flobs\flobs_data_callback.cc" />
+    <ClCompile Include="flobs\flobs_filter_info.cc" />
+    <ClCompile Include="flobs\flobs_inforeport_service.cc" />
+    <ClCompile Include="flobs\flobs_iodevice.cc" />
+    <ClCompile Include="flobs\flobs_manager.cc" />
+    <ClCompile Include="flobs\flobs_properyinfo.cc" />
+    <ClCompile Include="flobs\flobs_task_executor.cc" />
+    <ClCompile Include="flobs\flobs_util.cc" />
+    <ClCompile Include="flobs\flobs_video_decimator.cc" />
+    <ClCompile Include="flui\dpi_win.cc" />
+    <ClCompile Include="flui\ms_window_win.cc" />
+    <ClCompile Include="main.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="flbase\flbase_config.h" />
+    <ClInclude Include="flmojo\flmojo_service.h" />
+    <ClInclude Include="flmojo\flmojo_recv.h" />
+    <ClInclude Include="flmojo\flmojo_send.h" />
+    <ClInclude Include="flobs\display-helpers.hpp" />
+    <ClInclude Include="flobs\flobs_audio.h" />
+    <ClInclude Include="flobs\flobs_camera_beautify.h" />
+    <ClInclude Include="flobs\flobs_data_callback.h" />
+    <ClInclude Include="flobs\flobs_filter_info.h" />
+    <ClInclude Include="flobs\flobs_inforeport_service.h" />
+    <ClInclude Include="flobs\flobs_iodevice.h" />
+    <ClInclude Include="flobs\flobs_manager.h" />
+    <ClInclude Include="flobs\flobs_private_def.h" />
+    <ClInclude Include="flobs\flobs_properyinfo.h" />
+    <ClInclude Include="flobs\flobs_public_def.h" />
+    <ClInclude Include="flobs\flobs_quicktransition.h" />
+    <ClInclude Include="flobs\flobs_task_executor.h" />
+    <ClInclude Include="flobs\flobs_ui_callback.h" />
+    <ClInclude Include="flobs\flobs_ui_def.h" />
+    <ClInclude Include="flobs\flobs_util.h" />
+    <ClInclude Include="flobs\flobs_video.h" />
+    <ClInclude Include="flobs\flobs_info.h" />
+    <ClInclude Include="flobs\flobs_video_decimator.h" />
+    <ClInclude Include="flui\dpi_win.h" />
+    <ClInclude Include="flui\rc\finderliveobsrc.h" />
+    <ClInclude Include="flui\ms_window_win.h" />
+    <ClInclude Include="mmcrashpad\client\mmcrashpad_client.h" />
+    <ClInclude Include="mmcrashpad\client\mmcrashpad_client_export.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="flipc\flipc.vcxproj">
+      <Project>{a86223af-66f5-4f95-8715-cafb032ed3ad}</Project>
+    </ProjectReference>
+    <ProjectReference Include="flproto\flproto.vcxproj">
+      <Project>{59733bd6-dd92-4d9f-915b-bf658931c604}</Project>
+    </ProjectReference>
+    <ProjectReference Include="third_party\chromium_base\src\sln\base\base.vcxproj">
+      <Project>{4fcd889e-e390-44b0-b4bd-37db6f4ac9b6}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="flui\rc\finderliveobs.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="flui\rc\finderliveobs.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+// just cpp using LITE_RUNTIME
+option optimize_for = LITE_RUNTIME;
+
+package flremoting.protocol;
+
+message PreviewSizeMessage {
+    optional int32 cx = 1;
+    optional int32 cy = 2;
+};
+
+message PreviewCanvasMessage {
+    optional PreviewSizeMessage base = 1;
+    optional int32 res_type = 2;
+    optional PreviewSizeMessage res = 3;
+    optional bool is_portrait = 4;
+};
+
+message PreviewMouseMenuMessage {
+    optional int64 id = 1;
+    optional int32 x = 2;
+    optional int32 y = 3;
+};

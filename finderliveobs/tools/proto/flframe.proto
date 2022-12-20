@@ -1,0 +1,43 @@
+syntax = "proto2";
+
+// just cpp using LITE_RUNTIME
+option optimize_for = LITE_RUNTIME;
+
+package flremoting.protocol;
+
+message FrameVideoMessage {
+  // Frame Msg
+  optional string frame_msg = 1;
+  
+  // Frame ID.
+  optional uint32 frame_id = 2;
+
+  // Frame width.
+  optional uint32 frame_width = 3;
+  
+  // Frame height.
+  optional uint32 frame_height = 4;
+  
+  // Frame timestamp.
+  optional uint64 frame_timestamp = 5;
+  
+  // Frame rotation.
+  optional uint32 frame_rotation = 6;
+}
+
+message FrameAudioMessage {
+  // Frame Msg.
+  optional string frame_msg = 1;
+  
+  // Frame ID.
+  optional uint32 frame_id = 2;
+
+  // Frame rate.
+  optional uint32 frame_rate = 3;
+  
+  // Frame channel.
+  optional uint32 frame_channel = 4;
+  
+  // Frame timestamp.
+  optional uint64 frame_timestamp = 5;
+}

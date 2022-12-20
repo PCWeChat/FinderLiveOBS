@@ -1,0 +1,12 @@
+
+
+#ifndef FLOBS_FLOBS_UI_DEF_H_
+#define FLOBS_FLOBS_UI_DEF_H_
+
+#define BASE_WINDOW_WIDTH (1920)
+#define BASE_WINDOW_HEIGHT (1080)
+
+#define HANDLE_RADIUS (4.0f)
+#define HANDLE_SEL_RADIUS (HANDLE_RADIUS * 2.5f)
+
+#endif  // FLOBS_FLOBS_UI_DEF_H_
