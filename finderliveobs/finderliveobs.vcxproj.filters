@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cc" />
+    <ClCompile Include="flobs\flobs_manager.cc">
+      <Filter>flobs</Filter>
+    </ClCompile>
+    <ClCompile Include="flmojo\flmojo_service.cc">
+      <Filter>flmojo</Filter>
+    </ClCompile>
+    <ClCompile Include="flbase\flbase_config.cc">
+      <Filter>flbase</Filter>
+    </ClCompile>
+    <ClCompile Include="flobs\flobs_properyinfo.cc">
+      <Filter>flobs</Filter>
+    </ClCompile>
+    <ClCompile Include="flobs\flobs_util.cc">
+      <Filter>flobs</Filter>
+    </ClCompile>
+    <ClCompile Include="flobs\flobs_data_callback.cc">
+      <Filter>flobs</Filter>
+    </ClCompile>
+    <ClCompile Include="flmojo\flmojo_send.cc">
+      <Filter>flmojo</Filter>
+    </ClCompile>
+    <ClCompile Include="flmojo\flmojo_recv.cc">
+      <Filter>flmojo</Filter>
+    </ClCompile>
+    <ClCompile Include="flobs\flobs_iodevice.cc">
+      <Filter>flobs</Filter>
+    </ClCompile>
+    <ClCompile Include="flobs\flobs_filter_info.cc">
+      <Filter>flobs</Filter>
+    </ClCompile>
+    <ClCompile Include="flui\ms_window_win.cc">
+      <Filter>flui</Filter>
+    </ClCompile>
+    <ClCompile Include="flui\dpi_win.cc">
+      <Filter>flui</Filter>
+    </ClCompile>
+    <ClCompile Include="flobs\flobs_camera_beautify.cc">
+      <Filter>flobs</Filter>
+    </ClCompile>
+    <ClCompile Include="flobs\flobs_inforeport_service.cc">
+      <Filter>flobs</Filter>
+    </ClCompile>
+    <ClCompile Include="flobs\flobs_video_decimator.cc">
+      <Filter>flobs</Filter>
+    </ClCompile>
+    <ClCompile Include="flobs\flobs_task_executor.cc">
+      <Filter>flobs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="flobs">
+      <UniqueIdentifier>{ef3e7750-a603-4319-a8ae-8b91275c03b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="flmojo">
+      <UniqueIdentifier>{0bee76c0-af2d-4a85-91cb-01a5b0b0e41d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="flbase">
+      <UniqueIdentifier>{1fadec09-cdfc-4e33-ac57-4a229832d0f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="flui">
+      <UniqueIdentifier>{505192b2-61b5-4348-bd17-e3eedc6422c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="flui\rc">
+      <UniqueIdentifier>{b6ac02c8-3389-4232-bab8-720a3da3a2e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mmcrashpad">
+      <UniqueIdentifier>{2f07d3f8-a227-445d-9936-8e4966a7f0d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mmcrashpad\client">
+      <UniqueIdentifier>{814c9b8c-9512-4259-a999-b7658cb9d1c3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="flobs\flobs_manager.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\display-helpers.hpp">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_quicktransition.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_audio.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_private_def.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_video.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_public_def.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flmojo\flmojo_service.h">
+      <Filter>flmojo</Filter>
+    </ClInclude>
+    <ClInclude Include="flbase\flbase_config.h">
+      <Filter>flbase</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_ui_callback.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_info.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_properyinfo.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_util.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_ui_def.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_data_callback.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flmojo\flmojo_send.h">
+      <Filter>flmojo</Filter>
+    </ClInclude>
+    <ClInclude Include="flmojo\flmojo_recv.h">
+      <Filter>flmojo</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_iodevice.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_filter_info.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flui\ms_window_win.h">
+      <Filter>flui</Filter>
+    </ClInclude>
+    <ClInclude Include="flui\dpi_win.h">
+      <Filter>flui</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_camera_beautify.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flui\rc\finderliveobsrc.h">
+      <Filter>flui\rc</Filter>
+    </ClInclude>
+    <ClInclude Include="mmcrashpad\client\mmcrashpad_client.h">
+      <Filter>mmcrashpad\client</Filter>
+    </ClInclude>
+    <ClInclude Include="mmcrashpad\client\mmcrashpad_client_export.h">
+      <Filter>mmcrashpad\client</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_inforeport_service.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_video_decimator.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+    <ClInclude Include="flobs\flobs_task_executor.h">
+      <Filter>flobs</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="flui\rc\finderliveobs.rc">
+      <Filter>flui\rc</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="flui\rc\finderliveobs.ico">
+      <Filter>flui\rc</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
